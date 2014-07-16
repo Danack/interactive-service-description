@@ -311,6 +311,9 @@
                 }
             });
 
+            data.rawParams = jQuery.extend(true, {}, data.params);
+            data.operationName = "{{ command | e('js') }}";
+
             replacer = function(match, param) {
                 if (data.params.hasOwnProperty(param)) {
                     val = data.params[param];
